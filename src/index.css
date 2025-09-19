@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+/* class tái sử dụng */
+.hide-scrollbar {
+  scrollbar-width: none;       /* Firefox: bỏ luôn gutter */
+  -ms-overflow-style: none;    /* IE/Edge cũ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari: bỏ luôn scrollbar */
+}
+
+}
+
+@theme {
+  --color-primary: #5FBDFF;
+  --color-bold: #7B66FF;
+  --color-light: #96EFFF;
+  --color-very-light: #C5FFF8;
+}
+
+
+
+@layer components {
+    /* Card kiểu Fluent 2 */
+.card {
+  @apply rounded-2xl bg-white drop-shadow-2xl/25 backdrop-blur-md p-2 transition
+}
+
+.button {
+  @apply rounded-xl bg-indigo-100 drop-shadow-xl/25 backdrop-blur-md p-1 transition
+  hover:bg-indigo-50 hover:shadow-lg hover:-translate-0.5
+   active:shadow-inner
+}
+
+/* Tiêu đề trong card */
+.card-title {
+  @apply font-semibold text-gray-900;
+}
+
+/* Subtitle trong card */
+.card-subtitle {
+  @apply text-sm text-gray-500;
+}
+
+/* Thanh topbar */
+.topbar {
+  @apply bg-primary text-white px-3 py-1 shadow-md;
+}
+
+/* Ô input trong topbar */
+.topbar-input {
+  @apply mt-2 w-full rounded-xl px-3 py-2 text-gray-900 focus:outline-none;
+}
+
+
+
+/*-----------------------------------------------------------------------*/
+
+/* Scrollbar trong flyout */
+
+}
