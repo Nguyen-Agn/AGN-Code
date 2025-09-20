@@ -11,6 +11,7 @@ const handleAdd = () => {
     id: characters.length,
     name: prompt("Character name: "),
     codeRef: React.createRef(),
+    xml: "",
     x: 400,
     y: 225,
     direction: 0,
@@ -21,7 +22,7 @@ const handleAdd = () => {
 
 
   return (
-    <div className="w-[15vw] card p-0 overflow-scroll hide-scrollbar">
+    <div className="w-[40vw] md:w-[15vw] card p-0 overflow-scroll hide-scrollbar">
       <h2 className="font-bold text-lg topbar">Characters</h2>
       <ul className="shadow-inner gap-2 m-2 flex flex-col">
         {characters.map((c) => (

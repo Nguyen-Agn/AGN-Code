@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { Context } from "../Context"
+import { BookCopy, Play } from "lucide-react";
 
 const RunButton = () => {
     const {characters, setValue, resetInput, input, chosed} = useContext(Context);
@@ -44,11 +45,11 @@ const RunButton = () => {
             <button
                 onClick={handleRun}
                 className="button"
-            >  Run all </button>
+            >  <Play/> </button>
             <button
                 onClick={handleRunSingle}
-                className="button"
-            >  Run current </button>
+                className="button flex flex-row"
+            >  <BookCopy/> <Play/> </button>
 
         </div>
     )
@@ -69,6 +70,7 @@ function CharBehaviour(char) {
     setColor: (color) => {
       char.color = color;
     },
+    direction: char.direction
   };
 }
 export function randomColor() {

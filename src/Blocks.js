@@ -224,3 +224,23 @@ javascriptGenerator.forBlock['random_color'] = function() {
   return [code, javascriptGenerator.ORDER_NONE];
 }
 }
+
+// direction 
+{
+  const Direction = {
+  init: function() {
+    this.appendEndRowInput('NAME')
+      .appendField('Direction');
+    this.setInputsInline(true)
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({Direction: Direction});
+    javascriptGenerator.forBlock['Direction'] = function() {
+    const code = 'direction';
+  return [code, javascriptGenerator.ORDER_NONE];
+}
+}

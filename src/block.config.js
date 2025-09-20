@@ -116,7 +116,8 @@ export default {
         "categorystyle": "char_category",
         "contents": [
           {"kind":"block","type": "Move"},
-          {"kind":"block","type": "Turn"}
+          {"kind":"block","type": "Turn"},
+          {"kind":"block","type": "Direction"}
         ]
       },{
         "kind":"category",

@@ -11,9 +11,9 @@ export default function App() {
     <div className="h-screen w-screen flex flex-col gap-1 bg-very-light">
         <Header/>
 
-        <div className="flex flex-row w-full h-full gap-1">
+        <div className="flex flex-col md:flex-row w-full h-full gap-1">
 
-          <div className="flex-col flex items-center w-[60vw] h-full gap-1">
+          <div className="flex-col flex items-center w-full md:w-[60vw] h-full gap-1">
             <BlocklyWorkspace/>
             <div className="flex flex-row h-full w-full gap-1">
               <InputArea/>
@@ -21,7 +21,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex flex-col w-[40vw] h-full gap-1">
+          <div className="flex flex-col w-full md:w-[40vw] h-full gap-1">
             <Scene/>
             <div className="flex flex-row w-full h-full gap-1">
               <CodeSpace/>
