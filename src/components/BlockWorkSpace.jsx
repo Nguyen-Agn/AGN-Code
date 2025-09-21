@@ -43,14 +43,21 @@ export default function BlockWorkSpace() {
         startScale: 1.0,
         maxScale: 2,
         minScale: 0.5,
-        scaleSpeed: 1.2
+        scaleSpeed: 1.2,
+        pinch: true,
       },
       grid: {
         spacing: 30,
         length: 20,
         colour: '#ccc',
         snap: true
+      },
+      move: {
+        scrollbars: true,
+        drag: true,
+        wheel: true,
       }
+
     });
 
     workspaceRef.current = workspace;
@@ -129,7 +136,7 @@ export default function BlockWorkSpace() {
     <div className="flex-1 w-full">
       <div
         ref={divRef}
-        className="min-h-[500px] md:h-[600px] lg:h-[700px] w-full rounded-2xl bg-white/80 shadow-lg backdrop-blur-md p-2"
+        className="h-[500px] md:h-[600px] lg:h-[700px] w-full rounded-2xl bg-white/80 shadow-lg backdrop-blur-md p-2 touc"
       />
     </div>
   );

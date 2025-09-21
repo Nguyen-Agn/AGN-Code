@@ -17,7 +17,7 @@ const Scene = () => {
         {characters.map((ch) => (
           <div
             key={ch.id}
-            className= {`absolute w-16 h-16 flex items-center justify-center shadow-md text-white font-bold origin-center 
+            className= {`absolute w-16 h-16 flex items-center justify-center shadow-md text-white font-bold origin-center translate-x-[-50%] translate-y-[-50%]
               ${ch.id == chosed? "animate-pulse":""}`}
             style={{
               // nhân vật dùng % để khớp với hệ 800x450

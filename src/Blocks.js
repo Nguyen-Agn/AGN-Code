@@ -128,7 +128,7 @@ javascriptGenerator.forBlock['nextInt'] = function(block) {
     this.appendValueInput('STEP')
     .setAlign(Blockly.inputs.Align.RIGHT)
     .setCheck('Number')
-      .appendField('Move');
+      .appendField('Move toward');
     this.appendEndRowInput('none')
     .setAlign(Blockly.inputs.Align.RIGHT)
       .appendField('Step');
@@ -146,7 +146,69 @@ Blockly.common.defineBlocks({Move: Move});
   // Generator cho block
   javascriptGenerator.forBlock["Move"] = function (block, generator) {
     const msg = generator.valueToCode(block, "STEP", javascriptGenerator.ORDER_NONE) || "''";
-    const code = `move(${msg})\n`;
+    const code = `moveToward(${msg})\n`;
+    return code;
+  };
+}
+
+{
+  const Movexy = {
+  init: function() {
+    this.appendValueInput('X')
+    .setAlign(Blockly.inputs.Align.RIGHT)
+    .setCheck('Number')
+      .appendField('Move x');
+    this.appendValueInput('Y')
+    .setAlign(Blockly.inputs.Align.RIGHT)
+    .setCheck('Number')
+      .appendField('y');
+    this.setInputsInline(true)
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({Movexy: Movexy});
+                    
+                      
+  // Generator cho block
+  javascriptGenerator.forBlock["Movexy"] = function (block, generator) {
+    const x = generator.valueToCode(block, "X", javascriptGenerator.ORDER_NONE) || "''";
+    const y = generator.valueToCode(block, "Y", javascriptGenerator.ORDER_NONE) || "''";
+    const code = `move(${x},${y})\n`;
+    return code;
+  };
+}
+
+{
+  const SetPosition= {
+  init: function() {
+    this.appendValueInput('X')
+    .setAlign(Blockly.inputs.Align.RIGHT)
+    .setCheck('Number')
+      .appendField('Set x');
+    this.appendValueInput('Y')
+    .setAlign(Blockly.inputs.Align.RIGHT)
+    .setCheck('Number')
+      .appendField('y');
+    this.setInputsInline(true)
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({SetPosition: SetPosition});
+                    
+                      
+  // Generator cho block
+  javascriptGenerator.forBlock["SetPosition"] = function (block, generator) {
+    const x = generator.valueToCode(block, "X", javascriptGenerator.ORDER_NONE) || "''";
+    const y = generator.valueToCode(block, "Y", javascriptGenerator.ORDER_NONE) || "''";
+    const code = `SetPosition(${x},${y})\n`;
     return code;
   };
 }
@@ -177,6 +239,34 @@ Blockly.common.defineBlocks({Turn: Turn});
   javascriptGenerator.forBlock["Turn"] = function (block, generator) {
     const msg = generator.valueToCode(block, "TURN", javascriptGenerator.ORDER_NONE) || "''";
     const code = `turn(${msg})\n`;
+    return code;
+  };
+}
+
+{  const SetDirection = {
+  init: function() {
+    this.appendValueInput('D')
+    .setAlign(Blockly.inputs.Align.RIGHT)
+    .setCheck('Number')
+      .appendField('Set Direction');
+    this.appendEndRowInput('none')
+    .setAlign(Blockly.inputs.Align.RIGHT)
+      .appendField('Degree');
+    this.setInputsInline(true)
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({SetDirection: SetDirection});
+                    
+                      
+  // Generator cho block
+  javascriptGenerator.forBlock["SetDirection"] = function (block, generator) {
+    const msg = generator.valueToCode(block, "D", javascriptGenerator.ORDER_NONE) || "''";
+    const code = `SetDirection(${msg})\n`;
     return code;
   };
 }
@@ -244,3 +334,70 @@ Blockly.common.defineBlocks({Direction: Direction});
   return [code, javascriptGenerator.ORDER_NONE];
 }
 }
+
+
+// x
+{
+  {
+  const xP = {
+  init: function() {
+    this.appendEndRowInput('NAME')
+      .appendField('x');
+    this.setInputsInline(true)
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({xP: xP});
+  javascriptGenerator.forBlock['xP'] = function() {
+    const code = 'x';
+    return [code, javascriptGenerator.ORDER_NONE];
+  }
+  }
+}
+
+// y 
+{
+  {
+  const yP = {
+  init: function() {
+    this.appendEndRowInput('NAME')
+      .appendField('y');
+    this.setInputsInline(true)
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({yP: yP});
+    javascriptGenerator.forBlock['yP'] = function() {
+    const code = 'y';
+  return [code, javascriptGenerator.ORDER_NONE];
+}
+}
+}
+
+// name
+{
+  const Name = {
+  init: function() {
+    this.appendEndRowInput('NAME')
+      .appendField('Name');
+    this.setInputsInline(true)
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(255);
+  }
+};
+Blockly.common.defineBlocks({Name: Name});
+    javascriptGenerator.forBlock['Name'] = function() {
+    const code = 'name';
+  return [code, javascriptGenerator.ORDER_NONE];
+}
+}
+
+// 

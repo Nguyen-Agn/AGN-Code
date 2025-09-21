@@ -10,7 +10,7 @@ const Header = () =>  {
                 <h1 className="font-bold text-2xl">Nguyen-Code</h1>
             </div>
             <RunButton/>
-            <Toolbar/>
+            <Toolbar />
  
         </div>
     )

@@ -116,8 +116,14 @@ export default {
         "categorystyle": "char_category",
         "contents": [
           {"kind":"block","type": "Move"},
+          {"kind":"block","type": "Movexy"},
           {"kind":"block","type": "Turn"},
-          {"kind":"block","type": "Direction"}
+          {"kind":"block","type": "Direction"},
+          {"kind":"block","type": "xP"},
+          {"kind":"block","type": "yP"},
+          {"kind":"block","type": "SetPosition"},
+          {"kind":"block","type": "SetDirection"},
+          {"kind":"block","type": "Name"},
         ]
       },{
         "kind":"category",

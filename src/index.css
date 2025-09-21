@@ -26,6 +26,7 @@
     /* Card kiểu Fluent 2 */
 .card {
   @apply rounded-2xl bg-white drop-shadow-2xl/25 backdrop-blur-md p-2 transition
+
 }
 
 .button {

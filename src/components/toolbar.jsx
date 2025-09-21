@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 import { saveSnapshotsToFile, loadSnapshotsFromFile } from "../code.workspace";
 import { Import, Save } from "lucide-react";
+import HelpButton from "./about";
 
 export default function Toolbar() {
   const { storeRef,characters, setCharacters, setChosed } = useContext(Context);
@@ -34,6 +35,8 @@ export default function Toolbar() {
           }}
         />
       </label>
+
+      <HelpButton/>
     </div>
   );
 }

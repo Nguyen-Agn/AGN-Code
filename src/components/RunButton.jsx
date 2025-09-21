@@ -60,17 +60,36 @@ export default RunButton;
 
 function CharBehaviour(char) {
   return {
-    move: (steps) => {
+    moveToward: (steps) => {
       char.x += steps * Math.cos((char.direction * Math.PI) / 180);
       char.y += steps * Math.sin((char.direction * Math.PI) / 180);
+    },
+    move: (x,y) => {
+      char.x += x
+      char.y += y
+    },
+    SetPosition: (x,y) => {
+      char.x = x
+      char.y = y
     },
     turn: (angle) => {
       char.direction += angle;
     },
+    SetDirection: (angle) => {
+      char.direction = angle;
+    },
     setColor: (color) => {
       char.color = color;
     },
-    direction: char.direction
+    direction: char.direction,
+    x:char.x,
+    y:char.y,
+    color:char.color,
+    name:char.name,
+    setName: (name) => {
+      char.name = name;
+    }
+
   };
 }
 export function randomColor() {
